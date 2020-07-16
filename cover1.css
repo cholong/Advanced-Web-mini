@@ -1,0 +1,248 @@
+body {
+	background: #636363;
+}
+
+.cover {
+	width: 400px;
+	height: 600px;
+	background: #dedddd;
+	position:absolute;
+	top:50%;
+	left:50%;
+	border: 1px solid #414A4C;
+	overflow: hidden;
+	transform: translate(-50%, -50%);
+}
+
+.room {
+	transition: opacity .5s .5s ease;
+}
+
+.left {
+	width: 350px;
+	height: 700px;
+	background: #e7d6c4;
+	opacity: 0;
+	transform: perspective(600px) rotateY(45deg);
+	position:absolute;
+	top:-160px;
+	left:-38px;
+	animation: moving_left 2s 1s ease forwards;
+}
+
+@keyframes moving_left {
+	0% {
+		opacity: .2;
+		top: -180px;
+		filter: blur(0);
+	}
+	50% {opacity: .3;}
+	100% {
+		opacity: 0.8;
+		top: -160px;
+		filter: blur(3);
+	}
+}
+
+.right {
+	width: 350px;
+	height: 750px;
+	background: #ceb69c;
+	opacity: 0;
+	transform: perspective(500px) rotateY(-45deg);
+	position:absolute;
+	top:-196px;
+	left:164px;
+	animation: moving_right 2s 1.2s ease forwards;
+}
+
+@keyframes moving_right {
+	0% {
+		opacity: .2;
+		top: -216px;
+		filter: blur(0);
+	}
+	50% {opacity: .3;}
+	100% {
+		opacity: .8;
+		top: -196px;
+		filter: blur(3);
+	}
+}
+
+
+.floor {
+	width: 0;
+	height: 0;
+	border-left: 255px solid transparent;
+	border-right: 200px solid transparent;
+	border-bottom: 150px solid #9c9184;
+	opacity: 0;
+	transform: rotate(.1deg);
+	position:absolute;
+	top:480px;
+	left:-15px;
+	animation: moving_floor 2s 1s ease forwards;
+}
+
+@keyframes moving_floor {
+	0% {
+		opacity: .2;
+		top: 485px;
+		filter: blur(0);
+	}
+	50% {opacity: .3;}
+	100% {
+		opacity: .8;
+		top: 480px;
+		filter: blur(3);
+	}
+}
+
+.text {
+	font-family: 'Forum', cursive;
+	font-size: 3.5rem;
+	color: #414A4C;
+	text-align: center;
+	opacity:0;
+	letter-spacing: 8px;
+	line-height: 55px;
+	transition: filter 1s;
+	animation: title 1s 2.5s ease-in forwards;
+}
+
+.a {
+	margin-top: 50px;
+}
+
+#of {
+	font-family: 'IM Fell Great Primer', serif;
+	font-size: 1.5rem;
+	color: #414A4C;
+	position:absolute;
+	top:105px;
+	left:70px;
+}
+
+@keyframes title {
+	from {opacity:0; }
+	to {opacity:1;}
+}
+
+.name {
+	font-family: 'Forum', cursive;
+	font-size: 1rem;
+	position: absolute;
+	top:510px;
+	left:90px;
+	animation: author 1s 2.5s ease-in forwards;
+}
+
+@keyframes author {
+	from {opacity:0; filter: blur(5px);}
+	to {opacity:1; filter: blur(0px);}
+}
+
+.circle {
+	width:85px;
+	height: 40px;
+	background: #414A4C;
+	border: 0;
+	border-radius: 40px 40px 0px 0px;
+	opacity: 0;
+	position:absolute;
+	top:310px;
+	left:155px;
+	animation: moving_cir 2s 3s ease forwards;
+}
+
+#rectangle {
+	width: 85px;
+	height: 130px;
+	background: #dedddd;
+	opacity: .8;
+	position:absolute;
+	top: 40px;
+	left:0;
+}
+
+.block {
+	width: 25px;
+	height: 60px;
+	background: #414A4C;
+	opacity: 0;
+	align-items: center;
+}
+
+.circle:hover .block{
+	transform: rotate(180deg);
+	background: #ba8c30;
+	filter: blur(1px);
+}
+
+.cover:active .room {
+	opacity:0%;
+}
+
+@keyframes moving_cir {
+	from {opacity: 0; top: 280px;}
+	to {opacity: 1; top: 310px;}
+}
+
+.h {
+	position:absolute;
+	top:45px;
+	left:0;
+	transition: transform 1s .5s, background 2s .5s, filter 1s .5s;
+	animation: moving_top 1s 3.2s ease forwards;
+}
+
+.i {
+	position: absolute;
+	top: 45px;
+	left: 30px;
+	transition: transform 1s .5s, background 2s .5s, filter 1s .5s;
+	animation: moving_top 1s 3.4s ease forwards;
+}
+
+.j {
+	position:absolute;
+	top:45px;
+	left:60px;
+	transition: transform 1s .5s, background 2s .5s, filter 1s .5s;
+	animation: moving_top 1s 3.6s ease forwards;
+}
+
+@keyframes moving_top {
+	from {opacity: 0; top: 20px;}
+	to {opacity: 1; top: 45px;}
+}
+
+.e {
+	position: absolute;
+	top: 110px;
+	left: 0;
+	transition: transform 1s .5s, background 2s .5s, filter 1s .5s;
+	animation: moving_bottom 1s 3.8s ease forwards;
+}
+
+.f {
+	position:absolute;
+	top:110px;
+	left:30px;
+	transition: transform 1s .5s, background 2s .5s, filter 1s .5s;
+	animation: moving_bottom 1s 4s ease forwards;
+}
+.g {
+	position:absolute;
+	top:110px;
+	left:60px;
+	transition: transform 1s .5s, background 2s .5s, filter 1s .5s;
+	animation: moving_bottom 1s 4.2s ease forwards;
+
+}
+
+@keyframes moving_bottom {
+	from {opacity: 0; top: 85px;}
+	to {opacity: 1; top: 110px;}
+}
